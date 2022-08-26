@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Solana Mobile Inc.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/select_account_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="?materialIconButtonFilledStyle"
+        app:icon="@drawable/ic_baseline_account_balance_wallet_24" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/account_identifier_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/select_account_button"
+        app:layout_constraintBottom_toBottomOf="@id/select_account_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/account_balance_loading"
+        android:hint="@string/select_an_account"
+        android:textAppearance="?textAppearanceBody1"
+        android:maxLines="1"
+        android:ellipsize="middle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/account_balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/select_account_button"
+        app:layout_constraintBottom_toBottomOf="@id/select_account_button"
+        app:layout_constraintEnd_toStartOf="@id/select_account_button" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/account_balance_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/select_account_button"
+        app:layout_constraintBottom_toBottomOf="@id/select_account_button"
+        app:layout_constraintEnd_toStartOf="@id/account_balance_text"
+        android:indeterminate="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/select_destination_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/select_account_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="?materialIconButtonFilledStyle"
+        app:icon="@drawable/ic_baseline_contacts_24" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/destination_identifier_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/select_destination_button"
+        app:layout_constraintBottom_toBottomOf="@id/select_destination_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/destination_balance_loading"
+        android:hint="@string/select_a_destination"
+        android:textAppearance="?textAppearanceBody1"
+        android:maxLines="1"
+        android:ellipsize="middle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/destination_balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/select_destination_button"
+        app:layout_constraintBottom_toBottomOf="@id/select_destination_button"
+        app:layout_constraintEnd_toStartOf="@id/select_destination_button" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/destination_balance_loading"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/select_destination_button"
+        app:layout_constraintBottom_toBottomOf="@id/select_destination_button"
+        app:layout_constraintEnd_toStartOf="@id/destination_balance_text"
+        android:indeterminate="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/transfer_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintTop_toBottomOf="@id/select_destination_button"
+        android:text="@string/transfer_sol"
+        android:textAppearance="?textAppearanceBody1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
